@@ -3,20 +3,24 @@ console.log(title);
 
 //number
 var count = 5;
+
 //string
 var count = "5";
 
 var nick = "AJ";
 var nick = "AJ";
 
+//boolean
 var isMan = true;
 
+//function
 var log = function (str) {
   console.log(str);
 };
 
 log(nick);
 
+//object
 var image = { alt: "test" };
 
 image.width = 100;
@@ -25,6 +29,7 @@ console.log(image);
 console.log(image.width);
 console.log(image["width"]);
 
+//array
 var image = ["1.jpg", "2.jpg"];
 console.log(image, image.length);
 
@@ -76,11 +81,9 @@ for (var i = 0; i < arr.length; i++) {
   console.log(arr[i]);
 }
 
-//forEach
+// forEach
 const array1 = ["a", "b", "c"];
 array1.forEach((e) => console.log(e)); //a b c
 array1.forEach(function (word) {
   console.log(word); //a b c
 });
-
-//**배열 메소드 */
