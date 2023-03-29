@@ -88,7 +88,6 @@ function narray(data = [], size = 1) {
   for (let i = 0; i < data.length; i += size) {
     arr.push(data.slice(i, i + size));
   }
-
   return arr;
 }
 console.log(narray(items12, pageSize12));
@@ -98,9 +97,7 @@ const items13 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
 const pageSize13 = 3;
 
 const getStartIndexByPage = function (page) {
-  // quiz
   const startIndex = (page - 1) * pageSize13;
-
   return startIndex;
 };
 
@@ -110,9 +107,7 @@ getStartIndexByPage(3); // 6
 
 /** quiz 14 */
 const phoneNumber = '010-1234-1234';
-
 const check = /\d{3}-\d{4}-\d{4}/;
-
 console.log(check.test(phoneNumber));
 
 /** quiz 15 */
@@ -120,11 +115,57 @@ const user15 = { nick: 'nio', age: 20, location: '제주' };
 
 user15['age'] = 21;
 user15['location'] = '부산';
-
 console.log(user15);
+
+/** quiz 16 */
+const text16 = `{ "a": 1, "b": 2 }`;
+const obj16 = JSON.parse(text16);
+console.log(obj16);
+
+/** quiz 17 */
+const user17 = { nick: 'nio', age: 20, location: '제주' };
+const str17 = JSON.stringify(user17);
+console.log(str17);
 
 /** quiz18 */
 const items18 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const narray18 = items18.filter(items18 => items18 % 2 === 0);
+console.log(narray18);
+
+/** quiz19 */
+const list19 = [
+  {
+    id: 1,
+    title: 'JS',
+    isPublic: true,
+  },
+  {
+    id: 2,
+    title: '기본',
+    isPublic: true,
+  },
+  {
+    id: 3,
+    title: 'ecma',
+    isPublic: true,
+  },
+  {
+    id: 4,
+    title: 'dom',
+    isPublic: false,
+  },
+];
+
+const result19 = [];
+for (i = 0; i < list19.length; i++) {
+  if (list19[i].isPublic === true) {
+    result19.push(list19[i].title);
+    console.log(result19);
+  }
+}
+// console.log(...list1/9);
+// const result19 = list19.filter(list19.item.title => list19.item.isPublic === true);
+// console.log(result19);
 
 /** quiz20. 다음일 구하기 */
 const dday = '2022-02-02';
