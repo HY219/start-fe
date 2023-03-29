@@ -121,7 +121,7 @@ const user15 = { nick: 'nio', age: 20, location: '제주' };
 user15['age'] = 21;
 user15['location'] = '부산';
 
-console.log(user);
+console.log(user15);
 
 /** quiz18 */
 const items18 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
