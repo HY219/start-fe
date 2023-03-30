@@ -2,13 +2,13 @@
 const year = 2022;
 const month = 11;
 const day = 3;
-// console.log(day.padStart(1, '0'));
-// const dateString1 = `${year}-${month + 1}-${day.padStart(2, '0')}`;
-// console.log(dateString1); //2022-12-03
+const dateString1 = `${year}-${month + 1}-${String(day).padStart(2, '0')}`;
+console.log(dateString1); //2022-12-03
 
 /** quiz2.문자열 분리 */
 const dateString2 = '2022-12-12';
-console.log(dateString2.split('-')); //[2022,12,12]; //Number을 사용해서 문자->숫자로 바꿔주기
+const dateArray2 = dateString2.split('-'); //[2022,12,12]; //Number을 사용해서 문자->숫자로 바꿔주기-
+console.log(dateArray2.map(word => Number(word)));
 
 /** quiz3.문자열 변경 */
 const text3 = '나는 XX를 좋아해';
@@ -97,42 +97,52 @@ const items13 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
 const pageSize13 = 3;
 
 const getStartIndexByPage = function (page) {
-  const startIndex = (page - 1) * pageSize13;
-  return startIndex;
+  const startPage = (page - 1) * pageSize13;
+  return startPage;
 };
 
 getStartIndexByPage(1); // 0
 getStartIndexByPage(2); // 3
 getStartIndexByPage(3); // 6
 
-/** quiz 14 */
-const phoneNumber = '010-1234-1234';
+/** quiz 14. 전화번호 패턴 검사 */
+const phoneNumber = `010-1234-1234`;
 const check = /\d{3}-\d{4}-\d{4}/;
-console.log(check.test(phoneNumber));
+//const check = /[0-9]{3}-[0-9]{4}-[0-9]{4}/
+//\d = [0-9] : 0~9, 숫자가 들어이쓴 문자열
+//[^0-9] : 0~9를 제외한 문자열
+function telValidator(args) {
+  if (check.test(args)) {
+    console.log(true);
+  } else {
+    console.log(false);
+  }
+}
 
-/** quiz 15 */
+telValidator(phoneNumber);
+
+/** quiz 15. 객체값 변경 */
 const user15 = { nick: 'nio', age: 20, location: '제주' };
-
-user15['age'] = 21;
-user15['location'] = '부산';
+user15.age = 21;
+user15.location = '부산';
 console.log(user15);
 
-/** quiz 16 */
+/** quiz 16. 문자열을 객체형으로 */
 const text16 = `{ "a": 1, "b": 2 }`;
 const obj16 = JSON.parse(text16);
 console.log(obj16);
 
-/** quiz 17 */
+/** quiz 17. json을 문자열로*/
 const user17 = { nick: 'nio', age: 20, location: '제주' };
 const str17 = JSON.stringify(user17);
 console.log(str17);
 
-/** quiz18 */
+/** quiz18. 새로운 배열 생성*/
 const items18 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const narray18 = items18.filter(items18 => items18 % 2 === 0);
 console.log(narray18);
 
-/** quiz19 */
+/** quiz19. 배열 필터 */
 const list19 = [
   {
     id: 1,
@@ -160,12 +170,9 @@ const result19 = [];
 for (i = 0; i < list19.length; i++) {
   if (list19[i].isPublic === true) {
     result19.push(list19[i].title);
-    console.log(result19);
   }
 }
-// console.log(...list1/9);
-// const result19 = list19.filter(list19.item.title => list19.item.isPublic === true);
-// console.log(result19);
+console.log(result19);
 
 /** quiz20. 다음일 구하기 */
 const dday = '2022-02-02';
