@@ -83,7 +83,7 @@ console.log(items11.toString());
 const items12 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
 const pageSize12 = 3;
 
-function narray(data = [], size = 1) {
+function narray(data, size) {
   const arr = [];
   for (let i = 0; i < data.length; i += size) {
     arr.push(data.slice(i, i + size));
@@ -166,13 +166,16 @@ const list19 = [
   },
 ];
 
-const result19 = [];
-for (i = 0; i < list19.length; i++) {
-  if (list19[i].isPublic === true) {
-    result19.push(list19[i].title);
-  }
-}
-console.log(result19);
+const result_19 = list19.filter(item => item.isPublic === true);
+console.log(result_19.map(item => item.title));
+
+// const result19 = [];
+// for (i = 0; i < list19.length; i++) {
+//   if (list19[i].isPublic === true) {
+//     result19.push(list19[i].title);
+//   }
+// }
+// console.log(result19);
 
 /** quiz20. 다음일 구하기 */
 const dday = '2022-02-02';
