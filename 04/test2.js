@@ -79,6 +79,9 @@ for (let i = pageSize11; i < items11.length; i += pageSize11 + 1) {
 }
 console.log(items11.toString());
 
+// const str11 = result11.join(',').replace(/,---,/g, /---/); //정규표현식
+//replace, replaceAll 사용
+
 /** quiz12 */
 const items12 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
 const pageSize12 = 3;
@@ -93,6 +96,7 @@ function narray(data, size) {
 console.log(narray(items12, pageSize12));
 
 /** quiz13 */
+//게시글 출력 개수 및 순서 정할 때 많이 사용.
 const items13 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
 const pageSize13 = 3;
 
@@ -124,11 +128,12 @@ telValidator(phoneNumber);
 /** quiz 15. 객체값 변경 */
 const user15 = { nick: 'nio', age: 20, location: '제주' };
 user15.age = 21;
-user15.location = '부산';
+delete user15.location;
+user15.name = '부산';
 console.log(user15);
 
 /** quiz 16. 문자열을 객체형으로 */
-const text16 = `{ "a": 1, "b": 2 }`;
+const text16 = `{ "a": 1, "b": 2 }`; //key값 "" 로 묶여있어야함.(''안됨)
 const obj16 = JSON.parse(text16);
 console.log(obj16);
 
@@ -179,9 +184,19 @@ console.log(result_19.map(item => item.title));
 
 /** quiz20. 다음일 구하기 */
 const dday = '2022-02-02';
-const ddayDay = dday.split('-');
-const date = Number(ddayDay[2]) + 1;
-const ndate = String(date).padStart(2, '0');
-ddayDay[2] = ndate;
-const ndayDay = ddayDay.join('-');
-console.log(ndayDay);
+// const ddayDay = dday.split('-');
+// const date = Number(ddayDay[2]) + 1;
+// const ndate = String(date).padStart(2, '0');
+// ddayDay[2] = ndate;
+// const ndayDay = ddayDay.join('-');
+// console.log(ndayDay);
+
+let day20 = new Date(dday);
+console.log(day20);
+let nextDay20 = new Date(day20.setDate(day20.getDate() + 1));
+
+console.log(
+  `'${nextDay20.getFullYear()}-${(nextDay20.getMonth() + 1).padStart(2, '0')}-${
+    nextDay20.getDate() + 1
+  }`
+);
