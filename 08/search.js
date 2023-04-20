@@ -11,6 +11,7 @@ const options = {
 
 const $searchForm = document.getElementById('searchForm');
 const $searchInput = document.getElementById('searchInput');
+// let list;
 
 let page = 1;
 
@@ -25,7 +26,16 @@ $searchForm.addEventListener('submit', event => {
     .then(response => response.json())
     .then(json => {
       console.log(json);
+      //json객체를 배열로 반환
+      const list = Object.values(json);
+      //   console.log(list[0]);
+      //   console.log(list[0][0].title);
+      for (i = 0; i < list.length; i++) {
+        console.log(list[0][i].title);
+      }
     });
+  //   console.log(list);
 });
 
-const $title = document.getElementsByClassName('title');
+// const div = document.createElement('div');
+// document.appendChild(card);
