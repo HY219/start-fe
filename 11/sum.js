@@ -1,8 +1,14 @@
 const num = 3;
 
-export function sum(a, b) {
+function sum(a, b) {
   return a + b + num;
 }
+
+function multiple(a, b) {
+  return a * b * num;
+}
+
+export { sum, multiple };
 
 //모듈
 //외부에서는 볼 수 없고, 필요할 때만 꺼내쓸 수 o.
