@@ -1,5 +1,3 @@
-function sum(a, b) {
-  return a + b;
-}
+import sum from './sum.js';
 
 console.log(sum(10, 2));
